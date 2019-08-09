@@ -27,6 +27,7 @@ The k nearest neighbor search procedure uses the idea of branch-and-bound. In th
 - Compile `src/main.cc` by running `make` in the root of the repo, and run the generated executable `main`. kNN with k = 3 achieves 97.05% accuracy on the test set (60000 training images, 10000 test images)
 
 # HDJ Information
--创建一个空C++控制台sln,把“预编译头”和“安全开发生命周期（SDL）检查”（Security Development Lifecycle(SDL) checks）去掉
--把这几个文件添加进工程里就可以了
--如果编译失败，试试改变调试选项为C/C++>General>Debug Information Format>“C7 compatible (/Z7)”
+# 如何创建该工程
+- 创建一个空C++控制台sln,把“预编译头”和“安全开发生命周期（SDL）检查”（Security Development Lifecycle(SDL) checks）去掉
+- 把这几个文件添加进工程里就可以了
+- 如果编译失败，试试改变调试选项为C/C++>General>Debug Information Format>“C7 compatible (/Z7)”
