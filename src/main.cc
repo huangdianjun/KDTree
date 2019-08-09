@@ -116,3 +116,43 @@ int main(int argc, char **argv) {
     free(rawTestData);
     return 0;
 }
+
+#if 0
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+//功能：从node_vec点中，找到离localNode最近的点，并返回找到的点的id
+int main(int argc, char **argv) 
+{
+    using meshNodeSet = vector<pair<Point<3>, unsigned long>>;
+    meshNodeSet node_vec;
+    
+    int nCount = 0;
+    for (int i = 0; i < 100; i++)
+    {
+        for (int j = 0; j < 100; j++)
+        {
+            for (int k = 0; k < 100; k++)
+            {
+                Point<3> node;
+                node[0] = i;
+                node[1] = j;
+                node[2] = k;
+                node_vec.push_back(make_pair(node, nCount++));
+            }
+        }
+    }
+
+    KDTree<3, unsigned long> kd(node_vec);
+    Point<3> localNode;
+    localNode[0] =99.9;
+    localNode[1] = 99.9;
+    localNode[2] = 99.9;
+    auto id = kd.kNNValue(localNode, 1);  //kNNValue的第二个参数是离localNode最近的点的个数
+    std::cout << "id:" << id << std::endl;
+    
+    return 0;
+}
+#endif
